@@ -5,4 +5,5 @@ local keymap = vim.keymap
 keymap.set("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>")

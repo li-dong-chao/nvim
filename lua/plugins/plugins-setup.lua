@@ -21,7 +21,7 @@ local plugins = {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" }
     },
-    
+
     -- markdown 实时渲染
     {
         "iamcco/markdown-preview.nvim",
@@ -36,6 +36,9 @@ local plugins = {
         dependencies = { "nvim-tree/nvim-web-devicons" }
     },
 
+    -- 用ctl-hjkl来定位窗口 
+    "christoomey/vim-tmux-navigator",
+
     -- masion 管理 lsp linter formatter
     {
         "williamboman/mason.nvim",
@@ -44,19 +47,30 @@ local plugins = {
     },
 
 
---    "nvim-treesitter/nvim-treesitter", -- 语法高亮
---    "p00f/nvim-ts-rainbow", -- 配合treesitter，不同括号颜色区分
-
-
     -- 自动补全
---    "hrsh7th/nvim-cmp",
---    "hrsh7th/cmp-nvim-lsp",
---    "L3MON4D3/LuaSnip", -- snippets引擎，不装这个自动补全会出问题
---    "saadparwaiz1/cmp_luasnip",
---    "rafamadriz/friendly-snippets",
---    "hrsh7th/cmp-path", -- 文件路径
+    "neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
+    "L3MON4D3/LuaSnip", -- snippets引擎，不装这个自动补全会出问题
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
 
---    "windwp/nvim-autopairs", -- 自动补全括号
+    -- 自动补全括号，引号
+    "windwp/nvim-autopairs", 
+
+    -- 语法高亮
+    "nvim-treesitter/nvim-treesitter",
+
+    -- 配合treesitter，不同括号颜色区分
+    "p00f/nvim-ts-rainbow",
+
+    -- tab 标签页
+    "akinsho/bufferline.nvim"
+
+
 --    "lewis6991/gitsigns.nvim", -- 左则git提示
 }
 
