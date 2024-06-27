@@ -1,5 +1,45 @@
--- 默认不开启nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+local status, nvim_tree = pcall(require, "nvim-tree")
+if not status then
+    vim.notify("没有找到 nvim-tree")
+  return
+end
 
-require("nvim-tree").setup()
+-- 列表操作快捷键
+nvim_tree.setup({
+    -- 显示 git 状态图标
+    git = {
+        enable = true,
+    },
+    -- 显示 .文件，隐藏部分文件夹
+    filters = {
+        dotfiles = true,
+        custom = { 
+            "node_modules", 
+            "__pycache__" 
+        },
+    },
+    view = {
+        -- 宽度
+        width = 36,
+        -- 也可以 right
+        side = "left",
+        -- 不显示行数
+        number = false,
+        relativenumber = false,
+        -- 显示图标
+        signcolumn = "yes",
+    },
+    actions = {
+        open_file = {
+            -- 首次打开大小适配
+            resize_window = true,
+            -- 打开文件时保持打开
+            quit_on_open = false,
+        },
+    },
+})
+-- 自动关闭
+-- vim.cmd([[
+  -- autocmd BufEnter * ++nested if winnr("$") == 1 && bufname() == "NvimTree_" . tabpagenr() | quit | endif
+-- ]])
+
